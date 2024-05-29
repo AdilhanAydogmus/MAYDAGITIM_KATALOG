@@ -1,0 +1,26 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Download</title>
+</head>
+<body>
+    
+    <script>
+        // Dosya indirme linki
+        var downloadLink = document.createElement('a');
+        downloadLink.href = "https://drive.google.com/uc?export=download&id=1iOvkP1475N97mQMWs5tUeQNbsfye1GwZ";
+        downloadLink.download = 'document.pdf';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+
+        // İndirme işlemi tamamlandıktan sonra dosyayı açma
+        setTimeout(function() {
+            window.location.href = 'https://drive.google.com/file/d/1iOvkP1475N97mQMWs5tUeQNbsfye1GwZ/view';
+        }, 2000); // 2 saniye bekleyin, bu süreyi dosya boyutuna göre ayarlayabilirsiniz
+    </script>
+</body>
+</html>
